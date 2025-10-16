@@ -18,11 +18,41 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Text("Hola Zamahel como te va",
-                fontSize = 18.sp
-                )
-        }
 
+            MiPrimerCompose(
+                "Hola mundo perro es tu primer compose"
+            )
+
+            MiPrimerCompose(
+                "Este es tu segundo compose reutilizando Texto y la funcion MiPrimerCompose"
+            )
+
+
+
+        }
     }
 }
+
+        @Composable
+        fun MiPrimerCompose(valueText: String) {
+
+            Text(
+                text = valueText,
+                fontSize = 18.sp
+            )
+
+
+
+        }
+@Preview(showSystemUi = true)
+@Composable
+fun MiPrimerPreview(modifier: Modifier = Modifier) {
+    MiPrimerCompose("Mi primer Preview" )
+
+
+}
+
+
+
+
 
